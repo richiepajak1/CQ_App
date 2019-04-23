@@ -56,9 +56,9 @@ class ScreenManagement(ScreenManager):
 presentation = Builder.load_file("CQ_App.kv")
 
 
-class APIApp(App):
+class CQApp(App):
     def build(self):
         return presentation
 
 
-APIApp().run()
+CQApp().run()
