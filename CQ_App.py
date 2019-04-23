@@ -30,21 +30,28 @@ class DriveScreen(Screen):
 
 class KnowledgeScreen(Screen):
     """
-    This class handles all information dealing with the drive screen.
+    This class handles all information dealing with the knowledge screen.
     Any python code relating to this screen is handled here
     """
 
 
 class StrategyScreen(Screen):
     """
-    This class handles all information dealing with the drive screen.
+    This class handles all information dealing with the strategy screen.
     Any python code relating to this screen is handled here
     """
 
 
 class ActionScreen(Screen):
     """
-    This class handles all information dealing with the drive screen.
+    This class handles all information dealing with the action screen.
+    Any python code relating to this screen is handled here
+    """
+
+
+class ProgressScreen(Screen):
+    """
+    This class handles all information dealing with the progress screen.
     Any python code relating to this screen is handled here
     """
 
@@ -56,9 +63,9 @@ class ScreenManagement(ScreenManager):
 presentation = Builder.load_file("CQ_App.kv")
 
 
-class APIApp(App):
+class CQApp(App):
     def build(self):
         return presentation
 
 
-APIApp().run()
+CQApp().run()

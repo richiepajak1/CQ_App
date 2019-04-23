@@ -60,6 +60,13 @@ ScreenManagement:
                 text: 'Action!'
                 font_size: 20
 
+            Button:
+                on_release:
+                    app.root.current = 'drive_screen'
+                    root.manager.transition.direction = "left"
+                text: 'progress'
+                font_size: 20
+
 
 <DriveScreen>:
     name: 'drive_screen'
@@ -168,6 +175,40 @@ ScreenManagement:
 
     FloatLayout:
         id: action_float
+        Button:
+            id: sub_post_1
+            text: ""
+            pos_hint: {'x': .25, 'top': 1}
+            size_hint: .5, .165
+            on_release: root.display_popup(0)
+
+        TextInput:
+            id: subreddit_input
+            hint_text: "Enter a subreddit"
+            pos_hint: {'left': 1, 'bottom': 1}
+            size_hint: .4, .2
+
+        Button:
+            id: subreddit_submit
+            text: "Search"
+            pos_hint: {'x': .4, 'bottom': 1}
+            size_hint: .3, .2
+
+        Button:
+            on_release:
+                app.root.current = 'home_screen'
+                root.manager.transition.direction = "right"
+            text: '  back to the\n home screen'
+            font_size: 17
+            pos_hint: {'right': 1, 'bottom': 1}
+            size_hint: .3, .2
+
+
+<ProgressScreen>:
+    name: 'progress_screen'
+
+    FloatLayout:
+        id: drive_float
         Button:
             id: sub_post_1
             text: ""
