@@ -4,23 +4,43 @@ ScreenManagement:
     KnowledgeScreen:
     StrategyScreen:
     ActionScreen:
+    ProgressScreen:
 
 
 <HomeScreen>:
     name: 'home_screen'
     FloatLayout:
+        canvas.before:
+            Color:
+                rgba: 0, .7, .7, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+        Button:
+            id: sub_post_1
+            pos_hint: {'left': 1, 'top': 1}
+            size_hint: .38, .11
+
+        ProgressBar:
+            id: progress_screen_pb
+            pos_hint: {'x': .05, 'top': .97}
+            size_hint_x: .3
+            size_hint_y: None
+            height: '48dp'
+            value: 60
+
+        Label:
+            id: sub_post_1
+            text: "Progress %"
+            pos_hint: {'x': .135, 'top': .97}
+            size_hint: .1, 0
 
         Label:
             id: message_board
             height: self.texture_size[1]
             text: 'Welcome to the app'
             pos_hint: {'x': .25, 'y': -.1}
-
-        Label:
-            id: message_board
-            height: self.texture_size[1]
-            text: 'Total Score'
-            pos_hint: {'x': -.25, 'y': .35}
 
         Label:
             id: message_board
@@ -32,7 +52,14 @@ ScreenManagement:
             orientation: 'vertical'
             pos_hint: {'x': 0, 'bottom': 1}
             size_hint: .5, .75
+
             Button:
+                canvas.before:
+                    Color:
+                        rgba: 1, .5, .3, 1
+                    Line:
+                        width: 1.05
+                        rectangle: self.x, self.y, self.width, self.height
                 on_release:
                     app.root.current = 'drive_screen'
                     root.manager.transition.direction = "left"
@@ -40,13 +67,27 @@ ScreenManagement:
                 font_size: 20
 
             Button:
+                canvas.before:
+                    Color:
+                        rgba: 1, .5, .3, 1
+                    Line:
+                        width: 1.05
+                        rectangle: self.x, self.y, self.width, self.height
                 on_release:
                     app.root.current = 'knowledge_screen'
                     root.manager.transition.direction = "left"
+
                 text: 'Knowledge'
                 font_size: 20
 
             Button:
+                canvas.before:
+                    Color:
+                        rgba: 1, .5, .3, 1
+                    Line:
+                        width: 1.05
+                        rectangle: self.x, self.y, self.width, self.height
+
                 on_release:
                     app.root.current = 'strategy_screen'
                     root.manager.transition.direction = "left"
@@ -54,6 +95,13 @@ ScreenManagement:
                 font_size: 20
 
             Button:
+                canvas.before:
+                    Color:
+                        rgba: 1, .5, .3, 1
+                    Line:
+                        width: 1.05
+                        rectangle: self.x, self.y, self.width, self.height
+
                 on_release:
                     app.root.current = 'action_screen'
                     root.manager.transition.direction = "left"
@@ -61,8 +109,15 @@ ScreenManagement:
                 font_size: 20
 
             Button:
+                canvas.before:
+                    Color:
+                        rgba: 1, .5, .3, 1
+                    Line:
+                        width: 1.05
+                        rectangle: self.x, self.y, self.width, self.height
+
                 on_release:
-                    app.root.current = 'drive_screen'
+                    app.root.current = 'progress_screen'
                     root.manager.transition.direction = "left"
                 text: 'progress'
                 font_size: 20
@@ -70,15 +125,38 @@ ScreenManagement:
 
 <DriveScreen>:
     name: 'drive_screen'
-
     FloatLayout:
-        id: drive_float
+        canvas.before:
+            Color:
+                rgba: 0, .7, .7, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
         Button:
             id: sub_post_1
-            text: ""
-            pos_hint: {'x': .25, 'top': 1}
-            size_hint: .5, .165
-            on_release: root.display_popup(0)
+            pos_hint: {'left': 1, 'top': 1}
+            size_hint: .38, .11
+
+        ProgressBar:
+            id: progress_screen_pb
+            pos_hint: {'x': .05, 'top': .97}
+            size_hint_x: .3
+            size_hint_y: None
+            height: '48dp'
+            value: 60
+
+        Label:
+            id: sub_post_1
+            text: "Progress %"
+            pos_hint: {'x': .135, 'top': .97}
+            size_hint: .1, 0
+
+        Label:
+            id: message_board
+            height: self.texture_size[1]
+            text: 'Hello <insert student name>'
+            pos_hint: {'x': .25, 'y': .35}
 
         TextInput:
             id: subreddit_input
@@ -104,21 +182,39 @@ ScreenManagement:
 
 <KnowledgeScreen>:
     name: 'knowledge_screen'
-
     FloatLayout:
         id: drive_float
+        canvas.before:
+            Color:
+                rgba: 0, .7, .7, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
         Button:
             id: sub_post_1
-            text: ""
-            pos_hint: {'x': .25, 'top': 1}
-            size_hint: .5, .165
-            on_release: root.display_popup(0)
+            pos_hint: {'left': 1, 'top': 1}
+            size_hint: .38, .11
 
-        TextInput:
-            id: subreddit_input
-            hint_text: "Enter a subreddit"
-            pos_hint: {'left': 1, 'bottom': 1}
-            size_hint: .4, .2
+        ProgressBar:
+            id: progress_screen_pb
+            pos_hint: {'x': .05, 'top': .97}
+            size_hint_x: .3
+            size_hint_y: None
+            height: '48dp'
+            value: 60
+
+        Label:
+            id: sub_post_1
+            text: "Progress %"
+            pos_hint: {'x': .135, 'top': .97}
+            size_hint: .1, 0
+
+        Label:
+            id: message_board
+            height: self.texture_size[1]
+            text: 'Hello <insert student name>'
+            pos_hint: {'x': .25, 'y': .35}
 
         Button:
             id: subreddit_submit
@@ -141,18 +237,37 @@ ScreenManagement:
 
     FloatLayout:
         id: drive_float
+        canvas.before:
+            Color:
+                rgba: 0, .7, .7, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
         Button:
             id: sub_post_1
-            text: ""
-            pos_hint: {'x': .25, 'top': 1}
-            size_hint: .5, .165
-            on_release: root.display_popup(0)
+            pos_hint: {'left': 1, 'top': 1}
+            size_hint: .38, .11
 
-        TextInput:
-            id: subreddit_input
-            hint_text: "Enter a subreddit"
-            pos_hint: {'left': 1, 'bottom': 1}
-            size_hint: .4, .2
+        ProgressBar:
+            id: progress_screen_pb
+            pos_hint: {'x': .05, 'top': .97}
+            size_hint_x: .3
+            size_hint_y: None
+            height: '48dp'
+            value: 60
+
+        Label:
+            id: sub_post_1
+            text: "Progress %"
+            pos_hint: {'x': .135, 'top': .97}
+            size_hint: .1, 0
+
+        Label:
+            id: message_board
+            height: self.texture_size[1]
+            text: 'Hello <insert student name>'
+            pos_hint: {'x': .25, 'y': .35}
 
         Button:
             id: subreddit_submit
@@ -175,18 +290,37 @@ ScreenManagement:
 
     FloatLayout:
         id: action_float
+        canvas.before:
+            Color:
+                rgba: 1, .5, .5, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
         Button:
             id: sub_post_1
-            text: ""
-            pos_hint: {'x': .25, 'top': 1}
-            size_hint: .5, .165
-            on_release: root.display_popup(0)
+            pos_hint: {'left': 1, 'top': 1}
+            size_hint: .38, .11
 
-        TextInput:
-            id: subreddit_input
-            hint_text: "Enter a subreddit"
-            pos_hint: {'left': 1, 'bottom': 1}
-            size_hint: .4, .2
+        ProgressBar:
+            id: progress_screen_pb
+            pos_hint: {'x': .05, 'top': .97}
+            size_hint_x: .3
+            size_hint_y: None
+            height: '48dp'
+            value: 60
+
+        Label:
+            id: sub_post_1
+            text: "Progress %"
+            pos_hint: {'x': .135, 'top': .97}
+            size_hint: .1, 0
+
+        Label:
+            id: message_board
+            height: self.texture_size[1]
+            text: 'Hello <insert student name>'
+            pos_hint: {'x': .25, 'y': .35}
 
         Button:
             id: subreddit_submit
@@ -209,18 +343,37 @@ ScreenManagement:
 
     FloatLayout:
         id: drive_float
+        canvas.before:
+            Color:
+                rgba: 0, .7, .7, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
         Button:
             id: sub_post_1
-            text: ""
-            pos_hint: {'x': .25, 'top': 1}
-            size_hint: .5, .165
-            on_release: root.display_popup(0)
+            pos_hint: {'left': 1, 'top': 1}
+            size_hint: .38, .11
 
-        TextInput:
-            id: subreddit_input
-            hint_text: "Enter a subreddit"
-            pos_hint: {'left': 1, 'bottom': 1}
-            size_hint: .4, .2
+        ProgressBar:
+            id: progress_screen_pb
+            pos_hint: {'x': .05, 'top': .97}
+            size_hint_x: .3
+            size_hint_y: None
+            height: '48dp'
+            value: 60
+
+        Label:
+            id: sub_post_1
+            text: "Progress %"
+            pos_hint: {'x': .135, 'top': .97}
+            size_hint: .1, 0
+
+        Label:
+            id: message_board
+            height: self.texture_size[1]
+            text: 'Hello <insert student name>'
+            pos_hint: {'x': .25, 'y': .35}
 
         Button:
             id: subreddit_submit
