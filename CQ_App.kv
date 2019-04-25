@@ -1,1 +1,197 @@
+ScreenManagement:
+    HomeScreen:
+    DriveScreen:
+    KnowledgeScreen:
+    StrategyScreen:
+    ActionScreen:
 
+
+<HomeScreen>:
+    name: 'home_screen'
+    FloatLayout:
+
+        Label:
+            id: message_board
+            height: self.texture_size[1]
+            text: 'Welcome to the app'
+            pos_hint: {'x': .25, 'y': -.1}
+
+        Label:
+            id: message_board
+            height: self.texture_size[1]
+            text: 'Total Score'
+            pos_hint: {'x': -.25, 'y': .35}
+
+        Label:
+            id: message_board
+            height: self.texture_size[1]
+            text: 'Hello <insert student name>'
+            pos_hint: {'x': .25, 'y': .35}
+
+        BoxLayout:
+            orientation: 'vertical'
+            pos_hint: {'x': 0, 'bottom': 1}
+            size_hint: .5, .75
+            Button:
+                on_release:
+                    app.root.current = 'drive_screen'
+                    root.manager.transition.direction = "left"
+                text: 'Drive'
+                font_size: 20
+
+            Button:
+                on_release:
+                    app.root.current = 'knowledge_screen'
+                    root.manager.transition.direction = "left"
+                text: 'Knowledge'
+                font_size: 20
+
+            Button:
+                on_release:
+                    app.root.current = 'strategy_screen'
+                    root.manager.transition.direction = "left"
+                text: 'Strategy'
+                font_size: 20
+
+            Button:
+                on_release:
+                    app.root.current = 'action_screen'
+                    root.manager.transition.direction = "left"
+                text: 'Action!'
+                font_size: 20
+
+
+<DriveScreen>:
+    name: 'drive_screen'
+
+    FloatLayout:
+        id: drive_float
+        Button:
+            id: sub_post_1
+            text: ""
+            pos_hint: {'x': .25, 'top': 1}
+            size_hint: .5, .165
+            on_release: root.display_popup(0)
+
+        TextInput:
+            id: subreddit_input
+            hint_text: "Enter a subreddit"
+            pos_hint: {'left': 1, 'bottom': 1}
+            size_hint: .4, .2
+
+        Button:
+            id: subreddit_submit
+            text: "Search"
+            pos_hint: {'x': .4, 'bottom': 1}
+            size_hint: .3, .2
+
+        Button:
+            on_release:
+                app.root.current = 'home_screen'
+                root.manager.transition.direction = "right"
+            text: '  back to the\n home screen'
+            font_size: 17
+            pos_hint: {'right': 1, 'bottom': 1}
+            size_hint: .3, .2
+
+
+<KnowledgeScreen>:
+    name: 'knowledge_screen'
+
+    FloatLayout:
+        id: drive_float
+        Button:
+            id: sub_post_1
+            text: ""
+            pos_hint: {'x': .25, 'top': 1}
+            size_hint: .5, .165
+            on_release: root.display_popup(0)
+
+        TextInput:
+            id: subreddit_input
+            hint_text: "Enter a subreddit"
+            pos_hint: {'left': 1, 'bottom': 1}
+            size_hint: .4, .2
+
+        Button:
+            id: subreddit_submit
+            text: "Search"
+            pos_hint: {'x': .4, 'bottom': 1}
+            size_hint: .3, .2
+
+        Button:
+            on_release:
+                app.root.current = 'home_screen'
+                root.manager.transition.direction = "right"
+            text: '  back to the\n home screen'
+            font_size: 17
+            pos_hint: {'right': 1, 'bottom': 1}
+            size_hint: .3, .2
+
+
+<StrategyScreen>:
+    name: 'strategy_screen'
+
+    FloatLayout:
+        id: drive_float
+        Button:
+            id: sub_post_1
+            text: ""
+            pos_hint: {'x': .25, 'top': 1}
+            size_hint: .5, .165
+            on_release: root.display_popup(0)
+
+        TextInput:
+            id: subreddit_input
+            hint_text: "Enter a subreddit"
+            pos_hint: {'left': 1, 'bottom': 1}
+            size_hint: .4, .2
+
+        Button:
+            id: subreddit_submit
+            text: "Search"
+            pos_hint: {'x': .4, 'bottom': 1}
+            size_hint: .3, .2
+
+        Button:
+            on_release:
+                app.root.current = 'home_screen'
+                root.manager.transition.direction = "right"
+            text: '  back to the\n home screen'
+            font_size: 17
+            pos_hint: {'right': 1, 'bottom': 1}
+            size_hint: .3, .2
+
+
+<ActionScreen>:
+    name: 'action_screen'
+
+    FloatLayout:
+        id: action_float
+        Button:
+            id: sub_post_1
+            text: ""
+            pos_hint: {'x': .25, 'top': 1}
+            size_hint: .5, .165
+            on_release: root.display_popup(0)
+
+        TextInput:
+            id: subreddit_input
+            hint_text: "Enter a subreddit"
+            pos_hint: {'left': 1, 'bottom': 1}
+            size_hint: .4, .2
+
+        Button:
+            id: subreddit_submit
+            text: "Search"
+            pos_hint: {'x': .4, 'bottom': 1}
+            size_hint: .3, .2
+
+        Button:
+            on_release:
+                app.root.current = 'home_screen'
+                root.manager.transition.direction = "right"
+            text: '  back to the\n home screen'
+            font_size: 17
+            pos_hint: {'right': 1, 'bottom': 1}
+            size_hint: .3, .2
