@@ -10,17 +10,21 @@ ScreenManagement:
 <HomeScreen>:
     name: 'home_screen'
     FloatLayout:
+        #
         canvas.before:
             Color:
-                rgba: 0, .7, .7, 1
+                rgba: 1, 1, 1, 1
             Rectangle:
                 pos: self.pos
                 size: self.size
-
+        #The
         Button:
-            id: sub_post_1
+            id: pb_button
             pos_hint: {'left': 1, 'top': 1}
             size_hint: .38, .11
+            on_release:
+                app.root.current = 'progress_screen'
+                root.manager.transition.direction = "left"
 
         ProgressBar:
             id: progress_screen_pb
@@ -32,14 +36,16 @@ ScreenManagement:
 
         Label:
             id: sub_post_1
-            text: "Progress %"
+            markup: True
+            text: "Progress...."
             pos_hint: {'x': .135, 'top': .97}
             size_hint: .1, 0
 
         Label:
             id: message_board
             height: self.texture_size[1]
-            text: 'Welcome to the app'
+            markup: True
+            text: '[color=ff0000]Welcome to the app'
             pos_hint: {'x': .25, 'y': -.1}
 
         Label:
@@ -52,7 +58,7 @@ ScreenManagement:
             orientation: 'vertical'
             pos_hint: {'x': 0, 'bottom': 1}
             size_hint: .5, .75
-
+            #
             Button:
                 canvas.before:
                     Color:
@@ -60,10 +66,12 @@ ScreenManagement:
                     Line:
                         width: 1.05
                         rectangle: self.x, self.y, self.width, self.height
+                background_color: 0, 0, 0, 1
                 on_release:
                     app.root.current = 'drive_screen'
                     root.manager.transition.direction = "left"
-                text: 'Drive'
+                markup: True
+                text: '[b]Drive'
                 font_size: 20
 
             Button:
@@ -73,10 +81,11 @@ ScreenManagement:
                     Line:
                         width: 1.05
                         rectangle: self.x, self.y, self.width, self.height
+                background_color: .2, 1.5, .7, 1
                 on_release:
                     app.root.current = 'knowledge_screen'
                     root.manager.transition.direction = "left"
-
+                markup: True
                 text: 'Knowledge'
                 font_size: 20
 
@@ -87,11 +96,11 @@ ScreenManagement:
                     Line:
                         width: 1.05
                         rectangle: self.x, self.y, self.width, self.height
-
                 on_release:
                     app.root.current = 'strategy_screen'
                     root.manager.transition.direction = "left"
-                text: 'Strategy'
+                markup: True
+                text: '[u]Strategy'
                 font_size: 20
 
             Button:
@@ -105,8 +114,11 @@ ScreenManagement:
                 on_release:
                     app.root.current = 'action_screen'
                     root.manager.transition.direction = "left"
-                text: 'Action!'
-                font_size: 20
+                background_color: 0, 0, 0, 1
+                markup: True
+                text: '[i][u][b]Action!'
+                font_size: 30
+                color: .8, 0, .4, 1
 
             Button:
                 canvas.before:
@@ -119,6 +131,7 @@ ScreenManagement:
                 on_release:
                     app.root.current = 'progress_screen'
                     root.manager.transition.direction = "left"
+                markup: True
                 text: 'progress'
                 font_size: 20
 
@@ -190,7 +203,7 @@ ScreenManagement:
             Rectangle:
                 pos: self.pos
                 size: self.size
-
+        #
         Button:
             id: sub_post_1
             pos_hint: {'left': 1, 'top': 1}
@@ -296,7 +309,7 @@ ScreenManagement:
             Rectangle:
                 pos: self.pos
                 size: self.size
-
+        #
         Button:
             id: sub_post_1
             pos_hint: {'left': 1, 'top': 1}
@@ -349,7 +362,7 @@ ScreenManagement:
             Rectangle:
                 pos: self.pos
                 size: self.size
-
+        #
         Button:
             id: sub_post_1
             pos_hint: {'left': 1, 'top': 1}
