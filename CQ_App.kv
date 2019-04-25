@@ -9,15 +9,19 @@ ScreenManagement:
 
 <HomeScreen>:
     name: 'home_screen'
+
     FloatLayout:
-        #
+        #A canvas is created and a rectangle is placed over
+        #it and set to the size of the screen. This
+        #is done to change the screen background color.
         canvas.before:
             Color:
                 rgba: 1, 1, 1, 1
             Rectangle:
                 pos: self.pos
                 size: self.size
-        #The
+
+        # The following three widgets deal with the progress bar
         Button:
             id: pb_button
             pos_hint: {'left': 1, 'top': 1}
@@ -26,6 +30,7 @@ ScreenManagement:
                 app.root.current = 'progress_screen'
                 root.manager.transition.direction = "left"
 
+        # The progress bar represents the total progress of all quests
         ProgressBar:
             id: progress_screen_pb
             pos_hint: {'x': .05, 'top': .97}
@@ -40,6 +45,7 @@ ScreenManagement:
             text: "Progress...."
             pos_hint: {'x': .135, 'top': .97}
             size_hint: .1, 0
+        #end of progress bar------------------------
 
         Label:
             id: message_board
@@ -58,8 +64,12 @@ ScreenManagement:
             orientation: 'vertical'
             pos_hint: {'x': 0, 'bottom': 1}
             size_hint: .5, .75
-            #
+
+            #The following buttons link to their respective category screens
             Button:
+                #Much like with changing the window background, a canvas widget
+                #is created to make an outline for each button using
+                #a line instead of a rectangle
                 canvas.before:
                     Color:
                         rgba: 1, .5, .3, 1
@@ -138,7 +148,9 @@ ScreenManagement:
 
 <DriveScreen>:
     name: 'drive_screen'
+
     FloatLayout:
+        #canvas widget to change screen background color
         canvas.before:
             Color:
                 rgba: 0, .7, .7, 1
@@ -146,6 +158,7 @@ ScreenManagement:
                 pos: self.pos
                 size: self.size
 
+        #The following three widgets deal with the progress bar
         Button:
             id: sub_post_1
             pos_hint: {'left': 1, 'top': 1}
@@ -158,6 +171,7 @@ ScreenManagement:
             size_hint_y: None
             height: '48dp'
             value: 60
+        #end of progress bar------------------------
 
         Label:
             id: sub_post_1
@@ -195,15 +209,18 @@ ScreenManagement:
 
 <KnowledgeScreen>:
     name: 'knowledge_screen'
+
     FloatLayout:
         id: drive_float
+        #canvas widget to change screen background color
         canvas.before:
             Color:
                 rgba: 0, .7, .7, 1
             Rectangle:
                 pos: self.pos
                 size: self.size
-        #
+
+        #The following three widgets deal with the progress bar
         Button:
             id: sub_post_1
             pos_hint: {'left': 1, 'top': 1}
@@ -222,6 +239,7 @@ ScreenManagement:
             text: "Progress %"
             pos_hint: {'x': .135, 'top': .97}
             size_hint: .1, 0
+        #end of progress bar------------------------
 
         Label:
             id: message_board
@@ -250,6 +268,7 @@ ScreenManagement:
 
     FloatLayout:
         id: drive_float
+        #canvas widget to change screen background color
         canvas.before:
             Color:
                 rgba: 0, .7, .7, 1
@@ -257,6 +276,7 @@ ScreenManagement:
                 pos: self.pos
                 size: self.size
 
+        #the following three widgets deal with the progress bar
         Button:
             id: sub_post_1
             pos_hint: {'left': 1, 'top': 1}
@@ -275,6 +295,7 @@ ScreenManagement:
             text: "Progress %"
             pos_hint: {'x': .135, 'top': .97}
             size_hint: .1, 0
+        #end of progress bar------------------------
 
         Label:
             id: message_board
@@ -303,13 +324,14 @@ ScreenManagement:
 
     FloatLayout:
         id: action_float
+        #canvas widget to change screen background color
         canvas.before:
             Color:
                 rgba: 1, .5, .5, 1
             Rectangle:
                 pos: self.pos
                 size: self.size
-        #
+        #The following three widgets deal with the progress bar
         Button:
             id: sub_post_1
             pos_hint: {'left': 1, 'top': 1}
@@ -328,6 +350,7 @@ ScreenManagement:
             text: "Progress %"
             pos_hint: {'x': .135, 'top': .97}
             size_hint: .1, 0
+        #end of progress bar------------------------
 
         Label:
             id: message_board
@@ -356,13 +379,14 @@ ScreenManagement:
 
     FloatLayout:
         id: drive_float
+        #canvas widget to change screen background color
         canvas.before:
             Color:
                 rgba: 0, .7, .7, 1
             Rectangle:
                 pos: self.pos
                 size: self.size
-        #
+        #The following three widgets deal with the progress bar
         Button:
             id: sub_post_1
             pos_hint: {'left': 1, 'top': 1}
@@ -381,6 +405,7 @@ ScreenManagement:
             text: "Progress %"
             pos_hint: {'x': .135, 'top': .97}
             size_hint: .1, 0
+        #end of progress bar------------------------
 
         Label:
             id: message_board
